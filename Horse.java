@@ -5,6 +5,11 @@ public class Horse {
 	private String name;
 	private float seconds;
 	private static Random ran=new Random();	
+	private int betAmount;
+	
+	public int getBetAmount() {
+		return betAmount;
+	}
 	public String getName() {
 		return name;
 	}
@@ -22,6 +27,7 @@ public class Horse {
 		this.name = name;
 		
 		this.seconds=ran.nextInt(10 -1 + 1) + 1;
+		this.betAmount=ran.nextInt(1000 -500 + 1) + 500;
 	
 	}
 	

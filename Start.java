@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Start {
 
@@ -46,7 +47,10 @@ public class Start {
 		   Horse winner = Arrays.stream(myHorses)
 				      .min(Comparator.comparing(Horse::getSeconds))
 				      .orElseThrow(NoSuchElementException::new);
+		   int sum = Arrays.stream(myHorses).mapToInt(Horse::getBetAmount).sum();
+		   
 		   System.out.println("Ha ganado el caballo "+winner.getName()+" con un tiempo récord de:"+winner.getSeconds()+" segundos");
-		
+		   System.out.println("El apostante del caballo "+winner.getName()+ " ha ganado un total de: "+sum+"€");
+		  
 	}
 }
